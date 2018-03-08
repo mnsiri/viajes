@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h3>Itinerary #<%= @itinerary.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>User</dt>
+      <dd><%= @itinerary.user_id %></dd>
+
+      <dt>Country</dt>
+      <dd><%= @itinerary.country %></dd>
+
+      <dt>Category</dt>
+      <dd><%= @itinerary.category_id %></dd>
+
+      <dt>Name</dt>
+      <dd><%= @itinerary.name %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/itineraries" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/itineraries/<%= @itinerary.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_itinerary/<%= @itinerary.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

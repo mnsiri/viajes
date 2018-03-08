@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Itinerary resource:
+  # CREATE
+  get "/itineraries/new", :controller => "itineraries", :action => "new"
+  post "/create_itinerary", :controller => "itineraries", :action => "create"
+
+  # READ
+  get "/itineraries", :controller => "itineraries", :action => "index"
+  get "/itineraries/:id", :controller => "itineraries", :action => "show"
+
+  # UPDATE
+  get "/itineraries/:id/edit", :controller => "itineraries", :action => "edit"
+  post "/update_itinerary/:id", :controller => "itineraries", :action => "update"
+
+  # DELETE
+  get "/delete_itinerary/:id", :controller => "itineraries", :action => "destroy"
+  #------------------------------
+
   # Routes for the Comment resource:
   # CREATE
   get "/comments/new", :controller => "comments", :action => "new"
