@@ -24,8 +24,11 @@
         <td><%= itinerary.name %></td>
         <td>
           <a href="/itineraries/<%= itinerary.id %>" class="btn btn-primary">Show</a>
-          <a href="/itineraries/<%= itinerary.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_itinerary/<%= itinerary.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == itinerary.user %>
+            <a href="/itineraries/<%= itinerary.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_itinerary/<%= itinerary.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>

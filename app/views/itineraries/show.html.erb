@@ -23,12 +23,14 @@
       <a href="/itineraries" class="btn btn-primary">
         Back
       </a>
-      <a href="/itineraries/<%= @itinerary.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_itinerary/<%= @itinerary.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @itinerary.user %>
+        <a href="/itineraries/<%= @itinerary.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_itinerary/<%= @itinerary.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
