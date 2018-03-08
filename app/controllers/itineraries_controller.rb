@@ -49,8 +49,6 @@ class ItinerariesController < ApplicationController
 
   def update
     @itinerary = Itinerary.find(params[:id])
-
-    @itinerary.user_id = params[:user_id]
     @itinerary.country = params[:country]
     @itinerary.category_id = params[:category_id]
     @itinerary.name = params[:name]
