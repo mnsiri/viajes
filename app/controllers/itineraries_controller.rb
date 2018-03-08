@@ -10,7 +10,8 @@ class ItinerariesController < ApplicationController
   end
 
   def index
-    @itineraries = Itinerary.page(params[:page]).per(10)
+    @q = Itinerary.ransack(params[:q])
+    @itineraries = @q.result(:distinct => true).includes(:user, :photos, :likes, :comments, :category, :users).page(params[:page]).per(10)
 
     render("itineraries/index.html.erb")
   end
