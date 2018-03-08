@@ -5,4 +5,6 @@ class Comment < ApplicationRecord
 
   # Validations
 
+  validates :itinerary_id, :presence => true
+
 end
