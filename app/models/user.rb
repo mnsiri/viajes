@@ -16,6 +16,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :itinerary,
+             :through => :likes,
+             :source => :itinerary
+
   # Validations
 
   validates :username, :uniqueness => true
