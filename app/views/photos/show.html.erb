@@ -12,10 +12,22 @@
       <dd><img src="<%= @photo.image %>" class="img-responsive"></dd>
 
       <dt>User</dt>
-      <dd><%= @photo.user_id %></dd>
+      <dd>
+        <% if @photo.user.present? %>
+          <a href="/users/<%= @photo.user_id %>">
+            <%= @photo.user.username %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Itinerary</dt>
-      <dd><%= @photo.itinerary_id %></dd>
+      <dd>
+        <% if @photo.itinerary.present? %>
+          <a href="/itineraries/<%= @photo.itinerary_id %>">
+            <%= @photo.itinerary.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

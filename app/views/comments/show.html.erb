@@ -9,10 +9,22 @@
       <dd><%= @comment.body %></dd>
 
       <dt>Commenter</dt>
-      <dd><%= @comment.commenter_id %></dd>
+      <dd>
+        <% if @comment.commenter.present? %>
+          <a href="/users/<%= @comment.commenter_id %>">
+            <%= @comment.commenter.username %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Itinerary</dt>
-      <dd><%= @comment.itinerary_id %></dd>
+      <dd>
+        <% if @comment.itinerary.present? %>
+          <a href="/itineraries/<%= @comment.itinerary_id %>">
+            <%= @comment.itinerary.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

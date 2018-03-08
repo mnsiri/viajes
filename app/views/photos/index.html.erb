@@ -20,8 +20,20 @@
       <tr>
         <td><%= photo.caption %></td>
         <td><img src='<%= photo.image %>' class='img-responsive'></td>
-        <td><%= photo.user.username %></td>
-        <td><%= photo.itinerary.user_id %></td>
+        <td>
+          <% if photo.user.present? %>
+            <a href="/users/<%= photo.user.id %>">
+              <%= photo.user.username %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if photo.itinerary.present? %>
+            <a href="/itineraries/<%= photo.itinerary.id %>">
+              <%= photo.itinerary.user_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/photos/<%= photo.id %>" class="btn btn-primary">Show</a>
           
