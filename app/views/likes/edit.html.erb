@@ -33,7 +33,7 @@
           Itinerary
         </label>
 
-        <input type="text" id="itinerary_id" name="itinerary_id" placeholder="Itinerary" class="form-control" value="<%= @like.itinerary_id %>">
+        <%= select_tag(:itinerary_id, options_from_collection_for_select(Itinerary.all, :id, :user_id, @like.itinerary_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
