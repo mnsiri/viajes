@@ -51,3 +51,5 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem "rollbar"
+gem "kaminari"
+gem "bootstrap4-kaminari-views"

@@ -10,7 +10,7 @@ class ItinerariesController < ApplicationController
   end
 
   def index
-    @itineraries = Itinerary.all
+    @itineraries = Itinerary.page(params[:page]).per(10)
 
     render("itineraries/index.html.erb")
   end
